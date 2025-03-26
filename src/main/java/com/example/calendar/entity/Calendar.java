@@ -8,9 +8,20 @@ import lombok.Getter;
 public class Calendar {
 
     private Long id;
-    private Long month;
-    private Long day;
-    private String title;
+    private String user;
     private String contents;
+    private String password;
+    private String date;
 
+    public Calendar(String user, String contents, String password, String date) {
+        this.user = user;
+        this.contents = contents;
+        this.password = password;
+        this.date = date;
+    }
+
+    public void update(String user, String contents) {
+        this.user = user;
+        this.contents = contents;
+    }
 }
