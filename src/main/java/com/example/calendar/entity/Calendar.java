@@ -1,6 +1,5 @@
 package com.example.calendar.entity;
 
-import com.example.calendar.dto.CalendarRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -9,20 +8,20 @@ import lombok.Getter;
 public class Calendar {
 
     private Long id;
-    private Long month;
-    private Long day;
-    private String title;
+    private String user;
     private String contents;
+    private String password;
+    private String date;
 
-    public void update(CalendarRequestDto dto) {
-        this.month = dto.getMonth();
-        this.day = dto.getDay();
-        this.title = dto.getTitle();
-        this.contents = dto.getContents();
+    public Calendar(String user, String contents, String password, String date) {
+        this.user = user;
+        this.contents = contents;
+        this.password = password;
+        this.date = date;
     }
 
-    public void updateContents(CalendarRequestDto dto) {
-        this.contents = getContents();
+    public void update(String user, String contents) {
+        this.user = user;
+        this.contents = contents;
     }
-
 }
